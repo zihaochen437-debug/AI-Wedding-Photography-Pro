@@ -78,6 +78,10 @@ We prefer the lifecycle:
 
 English and Simplified Chinese are both first-class documentation languages. When changing important project documentation, please update both versions when practical.
 
-## Licensing note
+## License and contribution terms
 
-The repository has not yet selected its final public license. Until that decision is made, please avoid submitting substantial third-party code or content with incompatible or unclear licensing.
+This project is licensed under the **Apache License 2.0**.
+
+Unless you explicitly state otherwise, any contribution intentionally submitted for inclusion in this repository is provided under the same Apache-2.0 terms, consistent with Section 5 of the license. You must have the right to submit the code, documentation, prompt material, test data, or other content you contribute.
+
+Do not submit third-party content with incompatible or unclear licensing.
