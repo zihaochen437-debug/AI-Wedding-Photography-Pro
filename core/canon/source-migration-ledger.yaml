@@ -1,0 +1,10 @@
+version: "1.9.0"
+compile_method: full-source-reconciliation
+source_basis:
+  - historical project source archive
+  - latest Active Canon
+  - Xiaoyunque v1.9.0 runtime source
+  - Doubao v1.9.0 runtime source
+principle: "compress files and wording, never silently compress capability"
+platform_architecture: "Universal Core -> Platform Adapter -> Platform Runtime"
+current_first_class_adapters: [xiaoyunque, doubao]

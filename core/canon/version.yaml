@@ -1,0 +1,6 @@
+version: "1.9.0"
+scope: universal-core
+current_first_class_adapters:
+  - xiaoyunque
+  - doubao
+license: Apache-2.0
