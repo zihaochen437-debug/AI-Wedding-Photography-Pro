@@ -98,6 +98,8 @@ tests/                 Core 与平台 Adapter 回归测试
 
 项目正在积极开发。当前优先维护小云雀与豆包 Adapter，同时 Universal Core 保持平台无关。
 
-## License
+## License / 许可证
 
-项目尚未最终选择公开许可证。在正式许可证加入仓库前，默认适用普通版权规则；提交大规模外部贡献前建议先讨论 License 与贡献授权方式。
+本项目采用 **Apache License 2.0**。详见 [LICENSE](LICENSE) 与 [NOTICE](NOTICE)。
+
+除非明确另行标注，贡献者主动提交到本仓库并用于合并的贡献，按同一 Apache-2.0 条款提供。
