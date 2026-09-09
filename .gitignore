@@ -1,0 +1,44 @@
+# Secrets and local configuration
+.env
+.env.*
+*.key
+*.pem
+*.p12
+*.pfx
+
+# Private project/customer data
+projects/
+private/
+customer-data/
+user-assets/
+client-assets/
+authorization-records/
+project-state-private/
+
+# Generated outputs and distributions
+generated/
+outputs/
+dist/
+build/
+releases-local/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Node
+node_modules/
+
+# OS / editors
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Logs and temporary files
+*.log
+*.tmp
+*.temp
+.cache/
