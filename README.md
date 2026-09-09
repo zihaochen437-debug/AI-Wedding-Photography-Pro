@@ -100,4 +100,6 @@ The project is in active public development. Xiaoyunque and Doubao are the curre
 
 ## License
 
-A public-source license has **not yet been selected**. Until a license is added, normal copyright applies. Please discuss licensing before submitting substantial external contributions.
+Licensed under the **Apache License 2.0**. See [LICENSE](LICENSE) and [NOTICE](NOTICE).
+
+Unless explicitly marked otherwise, contributions intentionally submitted to this repository are provided under the same Apache-2.0 terms.
