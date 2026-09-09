@@ -1,0 +1,13 @@
+type: object
+required: [asset_id, asset_type, version, status]
+properties:
+  asset_id: {type: string}
+  asset_type: {type: string}
+  version: {type: string}
+  status: {enum: [DRAFT, UNDER_USER_REVIEW, REVISION_REQUIRED, APPROVED, FROZEN, SUPERSEDED, REJECTED, QUARANTINE]}
+  validity: {enum: [VALID, NEEDS_REVALIDATION, INVALIDATED, SUPERSEDED]}
+  parent_asset_ids: {type: array}
+  file_path: {type: [string, "null"]}
+  model: {type: [string, "null"]}
+  prompt_manifest: {type: [string, "null"]}
+  qc_status: {type: [string, "null"]}

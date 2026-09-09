@@ -1,0 +1,18 @@
+type: object
+required: [video_id, duration_seconds, segments]
+properties:
+  video_id: {type: string}
+  duration_seconds: {type: number}
+  segments:
+    type: array
+    items:
+      type: object
+      required: [start, end, action]
+      properties:
+        start: {type: number}
+        end: {type: number}
+        action: {type: string}
+        emotion: {type: string}
+        camera: {type: string}
+        scene_change: {type: string}
+        sound: {type: string}

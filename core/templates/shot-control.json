@@ -1,0 +1,13 @@
+{
+  "shot_id": "SHOT-001",
+  "scene": "AB06",
+  "bride_look": "AB04",
+  "groom_look": "AB05",
+  "blocking_asset": null,
+  "storyboard_asset": null,
+  "camera_asset": null,
+  "lighting_asset": null,
+  "shot_role": "Hero",
+  "aspect_ratio": "2:3",
+  "status": "DRAFT"
+}

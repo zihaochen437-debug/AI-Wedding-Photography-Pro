@@ -1,0 +1,12 @@
+{
+  "asset_id": "AB01-V1",
+  "asset_type": "AB01",
+  "version": "1.0",
+  "status": "DRAFT",
+  "validity": "VALID",
+  "parent_asset_ids": [],
+  "file_path": null,
+  "model": null,
+  "prompt_manifest": null,
+  "qc_status": null
+}

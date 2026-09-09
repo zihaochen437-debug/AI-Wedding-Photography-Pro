@@ -1,0 +1,11 @@
+type: object
+required: [task_id, prompt, references]
+properties:
+  task_id: {type: string}
+  prompt: {type: string}
+  references: {type: array}
+  model_role: {type: string}
+  model_name: {type: [string, "null"]}
+  parameters: {type: object}
+  output: {type: object}
+  created_at: {type: string}

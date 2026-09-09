@@ -1,0 +1,13 @@
+{
+  "video_id": "VIDEO-001",
+  "type": "PERSON_DRIVEN_VIDEO",
+  "duration_seconds": 15,
+  "aspect_ratio": "9:16",
+  "use": "social",
+  "story_basis": "FICTIONAL",
+  "bride_look": "AB04",
+  "groom_look": "AB05",
+  "scene": "AB06",
+  "vb01_status": "DRAFT",
+  "segments": []
+}
