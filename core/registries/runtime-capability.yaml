@@ -1,0 +1,14 @@
+evidence_status: [VERIFIED, OBSERVED, UNKNOWN, UNSUPPORTED, SUPERSEDED]
+call_surfaces: [UI_AVAILABLE, USER_INTERACTIVE, AGENT_DIRECT_CALLABLE, SCRIPT_CALLABLE]
+capabilities:
+  image_generation: {status: UNKNOWN}
+  image_edit: {status: UNKNOWN}
+  video_generation: {status: UNKNOWN}
+  video_edit: {status: UNKNOWN}
+  image_upscale: {status: UNKNOWN}
+  outpaint: {status: UNKNOWN}
+  audio_generation: {status: UNKNOWN}
+  persistent_storage: {status: UNKNOWN}
+  python_runtime: {status: UNKNOWN}
+  ffmpeg: {status: UNKNOWN}
+  imagemagick: {status: UNKNOWN}

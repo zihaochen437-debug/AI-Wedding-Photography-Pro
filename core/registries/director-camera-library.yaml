@@ -1,0 +1,6 @@
+blocking_families: [parallel, front_back_offset, diagonal, axial_symmetry, embracing_dependency, walking, handholding, lookback, turn, seated, veil_train_interaction]
+action_phases: [PRE, MID, PEAK, RELEASE]
+shot_sizes: [environment_wide, environment_full, full, seven_eighth, half, close, face_closeup, detail]
+camera_geometry: [camera_distance, camera_azimuth, camera_height, camera_pitch, camera_roll, camera_aim_point, focal_length, subject_occupancy, aspect_ratio]
+focal_intents_mm: [24, 35, 50, 85, 105, 135]
+composition_families: [center, thirds, symmetry, negative_space, framing, leading_lines, diagonal, layered_depth]

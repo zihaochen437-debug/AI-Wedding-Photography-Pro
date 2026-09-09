@@ -1,0 +1,7 @@
+soft_baseline:
+  "6-9": {suite_directions: "1", look_scene: "1-main", note: compact_story}
+  "12-18": {suite_directions: "1-2", look_scene: "1-2", note: full_basic_language}
+  "24-36": {suite_directions: "2-3", look_scene: "multi", note: multi_sequence}
+  "48+": {suite_directions: "multi", look_scene: "multi", note: full_commercial_suite}
+shot_roles: [Hero, Support, Detail, Safety]
+coverage: [environment_wide, environment_full, full, seven_eighth, half, close, detail, portrait, landscape, static, dynamic, gaze_camera, gaze_off, single, couple]

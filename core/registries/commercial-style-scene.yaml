@@ -1,0 +1,29 @@
+style_categories:
+  - 经典婚纱
+  - 韩式清透
+  - 法式轻奢
+  - 欧式宫廷
+  - 现代极简
+  - 高定影棚
+  - 高级时装Editorial
+  - 电影纪实
+  - 电影情绪
+  - 复古胶片
+  - 草坪
+  - 森林
+  - 海边与礁石
+  - 山野与草原
+  - 花海与湖边
+  - 城市街拍
+  - 城市夜景
+  - 欧式建筑
+  - 法式室内
+  - 新中式
+  - 秀禾与龙凤褂
+  - 汉服/明制/宋制
+  - 民国
+  - 东方高定
+  - 旅行婚纱
+  - 创意实验
+scene_rule: same_world_different_camera
+preset_boundary: open_not_exhaustive

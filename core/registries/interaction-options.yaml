@@ -1,0 +1,14 @@
+reference_upload_mode:
+  - MIXED
+  - SINGLE_PERSON_BATCH
+  - GROOM_THEN_BRIDE
+  - BRIDE_THEN_GROOM
+  - CUSTOM
+output_type:
+  - PHOTO
+  - VIDEO
+  - PHOTO_AND_VIDEO
+photo_counts: [6, 9, 12, 18, 24, 36, "48+", custom, ai_recommend]
+retouch_levels: [R0, R1, R2, R3, R4]
+creative_modes: [FULL_CATALOG_MODE, RECOMMENDATION_MODE]
+manual_fallback: OTHER_OR_CUSTOM

@@ -1,0 +1,13 @@
+principles:
+  max_quality_policy: runtime_supported_stable_quality_up_to_current_project_4k_ceiling
+  identity_over_pixels: true
+  fixed_8000x12000: false
+fields:
+  - REQUESTED_QUALITY
+  - REQUESTED_RATIO
+  - REQUESTED_SIZE
+  - ACTUAL_NATIVE_SIZE
+  - UPSCALE_USED
+  - UPSCALED_SIZE
+  - FINAL_OUTPUT_SIZE
+ratios: ["1:1", "2:3", "3:2", "3:4", "4:3", "4:5", "9:16", "16:9", "21:9", "custom"]

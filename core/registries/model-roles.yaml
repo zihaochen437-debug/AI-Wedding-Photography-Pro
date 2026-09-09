@@ -1,0 +1,29 @@
+roles:
+  REASONING_MODEL:
+    purpose: project_planning_analysis_qc
+    selection: runtime
+  IMAGE_IDENTITY_MODEL:
+    purpose: AB01_AB02_AB03_identity_assets
+    selection: runtime
+  IMAGE_CREATIVE_MODEL:
+    purpose: AB04_AB05_and_final_photo_shots
+    selection: runtime
+  IMAGE_EDIT_MODEL:
+    purpose: scoped_image_revision
+    selection: runtime
+  IMAGE_SCENE_MODEL:
+    purpose: AB06_scene_world
+    selection: runtime
+  VIDEO_SHOT_MODEL:
+    purpose: short_dynamic_shots
+    selection: runtime
+  VIDEO_SEQUENCE_MODEL:
+    purpose: narrative_sequences
+    selection: runtime
+  VIDEO_EDIT_MODEL:
+    purpose: scoped_video_revision_extension
+    selection: runtime
+  AUDIO_MODEL:
+    purpose: audio_when_verified_and_authorized
+    selection: runtime
+rule: runtime_capability_scan_over_static_names
