@@ -1,0 +1,15 @@
+{
+  "reference_id": "REF-001",
+  "owner": "BRIDE",
+  "role": "FACE_FRONT_IDENTITY",
+  "grade": "S",
+  "allowed_for_generation": true,
+  "controls": [
+    "bride face identity"
+  ],
+  "must_not_transfer": [
+    "background",
+    "clothing",
+    "pose"
+  ]
+}

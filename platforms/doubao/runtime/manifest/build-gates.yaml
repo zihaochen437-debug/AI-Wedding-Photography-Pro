@@ -1,0 +1,26 @@
+version: "1.9.0"
+gates:
+  - id: SOURCE_RECONCILIATION
+    requirement: full_source_reconciliation
+  - id: ACTIVE_CANON_TARGETS
+    requirement: every_active_rule_has_existing_implementation_file
+  - id: FRONTMATTER
+    requirement: simple_single_line_description_and_doubao_name
+  - id: YAML_JSON_PARSE
+    requirement: all_structured_files_parse
+  - id: SCRIPT_SYNTAX
+    requirement: all_python_scripts_compile
+  - id: SCRIPT_NO_EMBEDDED_SECRETS
+    requirement: no_common_secret_patterns
+  - id: ASCII_INTERNAL_PATHS
+    requirement: internal_paths_ascii
+  - id: NO_FIXED_8000_12000
+    requirement: no_active_rule_uses_fixed_8000x12000_master
+  - id: NEUTRAL_ASSET_CAPTURE
+    requirement: neutral_asset_capture_lock_present
+  - id: VIDEO_CORE
+    requirement: video_production_reference_present
+  - id: PROMPT_AUTHORITY_DELTA
+    requirement: prompt_authority_delta_present
+  - id: ZIP_INTEGRITY
+    requirement: zip_test_pass

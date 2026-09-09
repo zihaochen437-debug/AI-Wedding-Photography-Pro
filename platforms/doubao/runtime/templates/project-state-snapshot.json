@@ -1,0 +1,24 @@
+{
+  "project_id": "PROJECT-001",
+  "current_phase": "PHASE_A",
+  "current_active_task": null,
+  "reference_intake_status": "OPEN",
+  "asset_statuses": {
+    "AB01": "DRAFT",
+    "AB02": "DRAFT",
+    "AB03": "DRAFT",
+    "AB04": "DRAFT",
+    "AB05": "DRAFT",
+    "AB06": "DRAFT"
+  },
+  "current_suite": null,
+  "current_look": null,
+  "current_scene": null,
+  "photo_target_count": null,
+  "video_projects": [],
+  "active_generation_refs": [],
+  "last_approved_asset": null,
+  "open_revision": null,
+  "model_plan": {},
+  "persistence_status": "UNKNOWN"
+}

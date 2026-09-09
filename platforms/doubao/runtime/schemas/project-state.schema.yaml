@@ -1,0 +1,18 @@
+type: object
+required: [project_id, current_phase, persistence_status]
+properties:
+  project_id: {type: string}
+  current_phase: {type: string}
+  current_active_task: {type: [string, "null"]}
+  reference_intake_status: {type: string}
+  asset_statuses: {type: object}
+  current_suite: {type: [string, "null"]}
+  current_look: {type: [string, "null"]}
+  current_scene: {type: [string, "null"]}
+  photo_target_count: {}
+  video_projects: {type: array}
+  active_generation_refs: {type: array}
+  last_approved_asset: {type: [string, "null"]}
+  open_revision: {}
+  model_plan: {type: object}
+  persistence_status: {enum: [PERSISTED, SESSION_ONLY, UNKNOWN]}

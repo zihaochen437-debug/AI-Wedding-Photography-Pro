@@ -1,0 +1,5 @@
+bride_dimensions: [makeup, hairstyle, silhouette, neckline, sleeve, waistline, skirt_train, fabric, embroidery_beading, veil, headpiece, earrings, necklace, shoes]
+groom_dimensions: [face_grooming, hairstyle, suit_or_formalwear, shoulder_line, lapel, shirt, tie_or_bow, vest_or_cummerbund, cufflinks, trousers, shoes, boutonniere, watch_ring, fabric, color]
+prop_fields: [owner, hand, grip_point, height, direction, other_hand_state]
+traditional_consistency: true
+user_reference_can_override_presets: true

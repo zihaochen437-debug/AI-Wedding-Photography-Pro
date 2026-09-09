@@ -1,0 +1,27 @@
+version: "1.9.0"
+compile_method: full-source-reconciliation
+source_groups:
+  - group: original-commercial-photography-design
+    status: KEEP_AND_RESTRUCTURE
+    includes: [style-scene, pose-blocking, wardrobe-makeup-hair-props, camera-lens-lighting, shot-composition-storyboard]
+  - group: v1.0_identity_approval_interaction
+    status: UPGRADE
+    includes: [reference-guidance, user-approval, model-scan]
+  - group: v1.1_asset-management_preview
+    status: MERGE_AND_PARTIAL_SUPERSEDE
+    note: 资产台账与审批保留；强制低清多级预演和超大母版流程被新 AI 原生流程替代。
+  - group: v1.2_realism_scoped_revision
+    status: KEEP_AND_UPGRADE
+  - group: v1.5_camera_pose_cast_asset_system
+    status: KEEP_AND_RESTRUCTURE
+  - group: v1.6_platform-packaging_history
+    status: ARCHIVE_PLATFORM_HISTORY
+  - group: v1.7_phase_a_six_boards
+    status: KEEP_AND_UPGRADE
+  - group: v1.8_xiaoyunque_compact_runtime
+    status: ARCHIVE_PLATFORM_RUNTIME
+    note: 结构经验保留，禁脚本规则不进入豆包版。
+  - group: latest_2026_09_08_active_canon
+    status: ACTIVE
+    includes: [neutral-asset-capture, output-spec-truth, authority-delta-prompt, regeneration-authority, photo-native-final, video-core, doubao-script-tooling]
+missing_source_groups: []

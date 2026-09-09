@@ -1,0 +1,9 @@
+states: [DRAFT, UNDER_USER_REVIEW, REVISION_REQUIRED, APPROVED, FROZEN, SUPERSEDED, REJECTED, QUARANTINE]
+validity_states: [VALID, NEEDS_REVALIDATION, INVALIDATED, SUPERSEDED]
+authority:
+  AB01: bride_face_identity
+  AB02: groom_face_identity
+  AB03: couple_scale_and_proportion
+  AB04: bride_current_look
+  AB05: groom_current_look
+  AB06: current_scene
