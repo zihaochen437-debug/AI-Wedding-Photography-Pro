@@ -4,6 +4,10 @@ All notable public repository changes are tracked here.
 
 ## Unreleased
 
+No unreleased public changes yet.
+
+## v1.9.0 — 2026-09-09
+
 ### Added
 
 - Bilingual English / Simplified Chinese repository entry documentation.
@@ -36,7 +40,7 @@ The repository validator checks:
 - YAML / JSON parsing and Python syntax;
 - basic public-repository privacy and governance gates.
 
-## Adapter baselines
+### Adapter baselines
 
 - Xiaoyunque runtime baseline: v1.9.0
 - Doubao runtime baseline: v1.9.0
