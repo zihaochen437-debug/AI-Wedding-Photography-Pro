@@ -1,0 +1,295 @@
+version: 1.9.0
+scope: universal-core
+rules:
+- rule_id: PLATFORM_AGNOSTIC_CORE
+  status: ACTIVE
+  title: Universal Core 平台无关，平台能力通过 Adapter 映射
+  implementation: references/platform-adapter-contract.md
+- rule_id: PLATFORM_ADAPTER_NON_DEGRADATION
+  status: ACTIVE
+  title: 平台 Adapter 可改变执行方式，不得静默削弱 Core
+  implementation: references/platform-adapter-contract.md
+- rule_id: IDENTITY_PRIORITY
+  status: ACTIVE
+  title: 人物身份优先于风格、美化和创意
+  implementation: references/00-highest-rules.md
+- rule_id: LEAD_IDENTITY_SEPARATION
+  status: ACTIVE
+  title: 新娘新郎独立身份，禁止同脸串脸融合互换
+  implementation: references/00-highest-rules.md
+- rule_id: USER_AUTONOMY
+  status: ACTIVE
+  title: 人物精修、个人标志与身体呈现由用户决定
+  implementation: references/01-phase-a-identity.md
+- rule_id: SENSITIVE_INFERENCE_PROHIBITION
+  status: ACTIVE
+  title: 不得根据照片推断民族、疾病、残障等敏感信息
+  implementation: references/01-phase-a-identity.md
+- rule_id: LEAD_PARITY_LOCK
+  status: ACTIVE
+  title: 男女主角商业制作等级对等
+  implementation: references/03-phase-b-creative.md
+- rule_id: GLOBAL_REALISM_LOCK
+  status: ACTIVE
+  title: 自然、真实、写实统一视觉标准
+  implementation: references/00-highest-rules.md
+- rule_id: REFERENCE_UPLOAD_MODE_GATE
+  status: ACTIVE
+  title: 上传参考前先确认上传方式
+  implementation: references/01-phase-a-identity.md
+- rule_id: REFERENCE_TWO_LEVEL_CONFIRMATION
+  status: ACTIVE
+  title: 人物级与项目级两级补充确认
+  implementation: references/01-phase-a-identity.md
+- rule_id: REFERENCE_MINIMUM_AND_RECOMMENDED
+  status: ACTIVE
+  title: 真人高保真最低与商业推荐参考标准
+  implementation: references/01-phase-a-identity.md
+- rule_id: REFERENCE_SABCD_ROLE_ASSIGNMENT
+  status: ACTIVE
+  title: 参考图评级与职责分配
+  implementation: references/01-phase-a-identity.md
+- rule_id: MINIMUM_SUFFICIENT_REFERENCE_PACK
+  status: ACTIVE
+  title: 生成只使用最小充分参考包
+  implementation: references/05-prompt-compiler.md
+- rule_id: SOURCE_STANDARDIZE_FIRST
+  status: ACTIVE
+  title: 原图足够标准时优先标准化而非重造人物
+  implementation: references/01-phase-a-identity.md
+- rule_id: R0_R4_BEFORE_AB
+  status: ACTIVE
+  title: R0–R4 在 AB01/AB02 前确定
+  implementation: references/01-phase-a-identity.md
+- rule_id: SIX_CORE_BOARDS
+  status: ACTIVE
+  title: 仅保留 AB01–AB06 六张核心图片资产板
+  implementation: references/02-asset-boards.md
+- rule_id: OUTPUT_SPEC_TRUTH_POLICY
+  status: ACTIVE
+  title: 区分请求质量、比例、实际原生尺寸和最终输出
+  implementation: references/07-photo-production.md
+- rule_id: NON_GENERATIVE_LAYOUT
+  status: ACTIVE
+  title: 资产板文字与布局采用非生成式排版
+  implementation: references/02-asset-boards.md
+- rule_id: NEUTRAL_ASSET_CAPTURE_LOCK
+  status: ACTIVE
+  title: 标准资产纯白/中性光；Scene Base 中性基准光
+  implementation: references/02-asset-boards.md
+- rule_id: AB01_AB02_CONTENT
+  status: ACTIVE
+  title: 单人标准资产包含头部六视角、全身六视角与细节
+  implementation: references/02-asset-boards.md
+- rule_id: SCREEN_DIRECTION_RULE
+  status: ACTIVE
+  title: 左右方向按画面方向定义
+  implementation: references/02-asset-boards.md
+- rule_id: MIRROR_PROHIBITION_RULE
+  status: ACTIVE
+  title: 禁止镜像伪造身份左右视角
+  implementation: references/02-asset-boards.md
+- rule_id: HEAD_BODY_DIRECTION_SEPARATION
+  status: ACTIVE
+  title: 头部方向与身体朝向分离
+  implementation: references/02-asset-boards.md
+- rule_id: AB03_AUTHORITY
+  status: ACTIVE
+  title: AB03 负责双人比例，AB01/02 负责单人面部身份
+  implementation: references/02-asset-boards.md
+- rule_id: AB04_AB05_REUSE_IDENTITY_ANCHOR
+  status: ACTIVE
+  title: AB04/05 直接复用 AB01/02 已冻结身份原子资产
+  implementation: references/02-asset-boards.md
+- rule_id: AB06_SCENE_BASE
+  status: ACTIVE
+  title: AB06 为无主角的同世界 Scene Base
+  implementation: references/02-asset-boards.md
+- rule_id: ASSET_STATE_MACHINE
+  status: ACTIVE
+  title: 完整资产状态机
+  implementation: references/11-project-state-assets.md
+- rule_id: ASSET_DEPENDENCY_INVALIDATION
+  status: ACTIVE
+  title: 上游变化按依赖传播失效/复核
+  implementation: references/11-project-state-assets.md
+- rule_id: PHASE_A_STRICT_SERIAL
+  status: ACTIVE
+  title: Phase A 严格单项串行
+  implementation: references/01-phase-a-identity.md
+- rule_id: PROJECT_OUTPUT_TYPE_GATE
+  status: ACTIVE
+  title: Phase A 后先确认照片/视频/两者
+  implementation: references/03-phase-b-creative.md
+- rule_id: TARGET_PHOTO_COUNT_GATE
+  status: ACTIVE
+  title: 照片数量先于套系风格
+  implementation: references/03-phase-b-creative.md
+- rule_id: PHOTO_COUNT_DRIVEN_DIVERSITY_PLANNER
+  status: ACTIVE
+  title: 照片数量驱动套系/Scene/Shot 软规划
+  implementation: references/03-phase-b-creative.md
+- rule_id: BROAD_CHOICE_PRESENTATION_POLICY
+  status: ACTIVE
+  title: 创意选择全面展示与智能推荐并存
+  implementation: references/03-phase-b-creative.md
+- rule_id: PHASE_B_BRANCHING
+  status: ACTIVE
+  title: Phase B 可多选但建立独立 Suite 分支
+  implementation: references/03-phase-b-creative.md
+- rule_id: CAMERA_GEOMETRY_LOCK
+  status: ACTIVE
+  title: 景别、距离、方位、高度、俯仰、横滚等分离
+  implementation: references/04-director-camera.md
+- rule_id: CAMERA_TO_RENDERING_COMPILER
+  status: ACTIVE
+  title: 器材参数翻译为可见摄影语言，不伪造 EXIF
+  implementation: references/04-director-camera.md
+- rule_id: SCENE_LOOK_SEQUENCE_SHOT
+  status: ACTIVE
+  title: 商业组片层级 Scene→Look→Sequence→Shot
+  implementation: references/04-director-camera.md
+- rule_id: HERO_SUPPORT_DETAIL_SAFETY
+  status: ACTIVE
+  title: 商业 Shot 角色完整保留
+  implementation: references/04-director-camera.md
+- rule_id: DYNAMIC_MODEL_ORCHESTRATION
+  status: ACTIVE
+  title: 按任务能力动态路由推理/图片/视频模型
+  implementation: references/runtime-capability-contract.md
+- rule_id: RUNTIME_CAPABILITY_TRUTH_POLICY
+  status: ACTIVE
+  title: UI/Agent/Script 可调用状态不得互相推导
+  implementation: references/runtime-capability-contract.md
+- rule_id: VISUAL_PROMPT_UNIFIED_LOGIC
+  status: ACTIVE
+  title: 照片视频统一清晰自然准确具体提示词逻辑
+  implementation: references/05-prompt-compiler.md
+- rule_id: REFERENCE_IS_SEMANTIC_AUTHORITY
+  status: ACTIVE
+  title: 已批准资产本身承担是什么
+  implementation: references/05-prompt-compiler.md
+- rule_id: APPROVED_ASSET_AUTHORITY_DELTA
+  status: ACTIVE
+  title: 权威资产 + 未锁定变量 + Delta + 必要约束
+  implementation: references/05-prompt-compiler.md
+- rule_id: DETAILED_UNLOCKED_REALITY
+  status: ACTIVE
+  title: 未锁定内容详细描述形状尺寸材质位置光影等
+  implementation: references/05-prompt-compiler.md
+- rule_id: NO_EMPTY_AESTHETIC_WORDS
+  status: ACTIVE
+  title: 抽象审美词不能代替可见描述
+  implementation: references/05-prompt-compiler.md
+- rule_id: PRODUCTION_CONTROL_ASSETS
+  status: ACTIVE
+  title: Blocking/Storyboard/Camera/Lighting/Motion/Audio 可冻结资产化
+  implementation: references/04-director-camera.md
+- rule_id: AI_NATIVE_FINAL_SHOT
+  status: ACTIVE
+  title: 正式 Shot 第一次生成即按商业成片质量
+  implementation: references/07-photo-production.md
+- rule_id: APPROVED_SHOT_FINAL_BASELINE
+  status: ACTIVE
+  title: 批准 Shot 为最终视觉基线
+  implementation: references/07-photo-production.md
+- rule_id: SCOPED_REVISION_POLICY
+  status: ACTIVE
+  title: 修什么只允许什么变化
+  implementation: references/06-qc-revision.md
+- rule_id: REGENERATION_FOLLOWS_ASSET_AUTHORITY
+  status: ACTIVE
+  title: 重生成继承仍有效权威资产
+  implementation: references/06-qc-revision.md
+- rule_id: REJECTED_ASSET_IS_NOT_AUTHORITY
+  status: ACTIVE
+  title: REJECTED/QUARANTINE 不得作为权威
+  implementation: references/06-qc-revision.md
+- rule_id: ACTIVE_VS_QC_REFERENCES
+  status: ACTIVE
+  title: 生成参考与 QC/审计参考分离
+  implementation: references/05-prompt-compiler.md
+- rule_id: IDENTITY_REFERENCE_ESCALATION
+  status: ACTIVE
+  title: 身份漂移按 AB04/05→AB01/02→AB03→单张原图升级
+  implementation: references/06-qc-revision.md
+- rule_id: VIDEO_CORE_PRODUCT
+  status: ACTIVE
+  title: 视频为正式核心产品
+  implementation: references/08-video-production.md
+- rule_id: VIDEO_PROJECT_GATE
+  status: ACTIVE
+  title: 视频项目前置确认类型/时长/比例/用途/故事基础
+  implementation: references/08-video-production.md
+- rule_id: VB01
+  status: ACTIVE
+  title: VB01 视频分镜与时间轴资产板
+  implementation: references/08-video-production.md
+- rule_id: VIDEO_CONTIGUOUS_TIMELINE
+  status: ACTIVE
+  title: 视频时间轴连续不重叠
+  implementation: references/08-video-production.md
+- rule_id: VIDEO_PHYSICS_REALISM
+  status: ACTIVE
+  title: 视频人体、布料、头纱、风、重力与相机运动真实
+  implementation: references/08-video-production.md
+- rule_id: VIDEO_REFERENCE_ROLES
+  status: ACTIVE
+  title: 视频参考素材明确职责与非继承范围
+  implementation: references/08-video-production.md
+- rule_id: PHOTO_TO_VIDEO_ANCHOR
+  status: ACTIVE
+  title: 批准婚纱照是图生视频视觉锚点
+  implementation: references/08-video-production.md
+- rule_id: VIDEO_QC
+  status: ACTIVE
+  title: 视频身份/Look/Scene/物理/音画连续性质检
+  implementation: references/08-video-production.md
+- rule_id: VIDEO_SEGMENT_SCOPED_REVISION
+  status: ACTIVE
+  title: 视频局部片段受控修订
+  implementation: references/08-video-production.md
+- rule_id: APPROVED_VIDEO_BASELINE
+  status: ACTIVE
+  title: 批准视频版本为最终基线
+  implementation: references/08-video-production.md
+- rule_id: AUDIO_BOUNDARY
+  status: ACTIVE
+  title: 音频控制节奏情绪语音，不控制视觉身份
+  implementation: references/08-video-production.md
+- rule_id: PROJECT_STATE_SNAPSHOT
+  status: ACTIVE
+  title: 维护项目状态快照并诚实标记持久化
+  implementation: references/11-project-state-assets.md
+- rule_id: CAST_PORTRAIT_ISOLATION
+  status: ACTIVE
+  title: 群演/配角不得继承主角肖像
+  implementation: references/06-qc-revision.md
+- rule_id: USER_INTERACTION_POLICY
+  status: ACTIVE
+  title: Phase A 单项串行，Phase B 多选分支，选项优先自定义兜底
+  implementation: references/03-phase-b-creative.md
+- rule_id: HARD_FAILURE_GATE
+  status: ACTIVE
+  title: 身份/人体/服装/Scene/修订越界等硬失败进入拒绝隔离
+  implementation: references/06-qc-revision.md
+- rule_id: SUPERSEDED_PIPELINE_PURGE
+  status: ACTIVE
+  title: 清除固定8000x12000、旧底片精修、批准后重生Final等旧链路
+  implementation: canon/deprecated-and-superseded.yaml
+- rule_id: PERSISTENCE_TRUTH
+  status: ACTIVE
+  title: PERSISTED/SESSION_ONLY/UNKNOWN 必须真实
+  implementation: references/11-project-state-assets.md
+- rule_id: PRIVACY_NO_SILENT_UPLOAD
+  status: ACTIVE
+  title: 脚本与工具不得静默上传真人参考资料
+  implementation: references/runtime-capability-contract.md
+- rule_id: NO_FAKE_EXIF
+  status: ACTIVE
+  title: 相机型号是摄影语言意图，不伪造真实 EXIF/RAW
+  implementation: references/04-director-camera.md
+- rule_id: FULL_SOURCE_RECONCILIATION
+  status: ACTIVE
+  title: 编译必须从完整项目源重建 Active Canon，不以单个旧 ZIP 为唯一源码
+  implementation: canon/source-migration-ledger.yaml
