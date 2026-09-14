@@ -37,25 +37,61 @@ def validate_structured_files() -> None:
 
 
 def validate_core() -> None:
+    version_path = ROOT / "core/VERSION"
+    if not version_path.exists():
+        error("Missing core/VERSION")
+    else:
+        version_text = version_path.read_text(encoding="utf-8").strip()
+        if not version_text.startswith("2.0.0"):
+            error(f"v2 development branch expected core version 2.0.0*, got {version_text}")
+
     canon_path = ROOT / "core/canon/active-canon.yaml"
     if not canon_path.exists():
         error("Missing core/canon/active-canon.yaml")
         return
+
     canon = load_yaml(canon_path) or {}
-    ids = {rule.get("rule_id") for rule in canon.get("rules", [])}
+    rules = canon.get("rules", [])
+    active_ids = {rule.get("rule_id") for rule in rules if rule.get("status") == "ACTIVE"}
+
     required = {
+        "PROJECT_NAME_V2_LOCK",
         "PLATFORM_AGNOSTIC_CORE",
         "PLATFORM_ADAPTER_NON_DEGRADATION",
         "IDENTITY_PRIORITY",
-        "SIX_CORE_BOARDS",
+        "RETOUCH_PROFILE_RESOLVER",
+        "STANDARD_WARDROBE_SELECTION_GATE",
+        "SIX_LOGICAL_CORE_ASSETS",
+        "STANDARD_IDENTITY_4_PLUS_1_POLICY",
+        "AB03_SINGLE_COUPLE_MASTER",
+        "PHASE_B_WORK_MODE_GATE",
+        "WORK_MODE_DOES_NOT_BYPASS_QC",
+        "EXPLICIT_MAKEUP_COMPILATION",
+        "LOOK_IDENTITY_DRIFT_PROTECTION",
         "APPROVED_ASSET_AUTHORITY_DELTA",
+        "REFERENCE_BINDING_TRUTH",
         "SCOPED_REVISION_POLICY",
         "VIDEO_CORE_PRODUCT",
         "RUNTIME_CAPABILITY_TRUTH_POLICY",
     }
-    missing = sorted(required - ids)
+    missing = sorted(required - active_ids)
     if missing:
-        error(f"Universal Core missing required rule IDs: {missing}")
+        error(f"Universal Core missing required v2 ACTIVE rule IDs: {missing}")
+
+    forbidden_active = {
+        "SIX_CORE_BOARDS",
+    }
+    stale = sorted(forbidden_active & active_ids)
+    if stale:
+        error(f"Superseded v1 rule IDs are still ACTIVE: {stale}")
+
+    highest_rules = ROOT / "core/references/00-highest-rules.md"
+    if highest_rules.exists():
+        text = highest_rules.read_text(encoding="utf-8", errors="ignore")
+        if "Ai 婚纱影像 Pro" not in text:
+            error("v2 project name missing from core/references/00-highest-rules.md")
+    else:
+        error("Missing core/references/00-highest-rules.md")
 
     platform_only_phrases = [
         "豆包为当前唯一发行目标",
@@ -69,10 +105,18 @@ def validate_core() -> None:
                 if phrase in text:
                     error(f"Platform-only claim leaked into Universal Core: {path.relative_to(ROOT)}: {phrase}")
 
+    superseded_phrases = [
+        "正式母版目标：8000 × 12000",
+        "正式母版目标: 8000 × 12000",
+        "六张核心图片资产板",
+        "正面上半身锚、六个全身方向",
+        "正面上半身锚 + 六个标准全身方向",
+    ]
     for path in (ROOT / "core/references").glob("*.md"):
         text = path.read_text(encoding="utf-8", errors="ignore")
-        if "正式母版目标：8000 × 12000" in text or "正式母版目标: 8000 × 12000" in text:
-            error(f"Superseded fixed 8000x12000 master found in active core reference: {path.relative_to(ROOT)}")
+        for phrase in superseded_phrases:
+            if phrase in text:
+                error(f"Superseded v1 phrase found in active core reference: {path.relative_to(ROOT)}: {phrase}")
 
 
 def validate_xiaoyunque() -> None:
@@ -93,60 +137,76 @@ def validate_xiaoyunque() -> None:
         if not (root / rel).exists():
             error(f"Xiaoyunque runtime missing: {rel}")
 
+    skill_path = root / "SKILL.md"
+    if skill_path.exists():
+        skill = skill_path.read_text(encoding="utf-8", errors="ignore")
+        required_skill_markers = [
+            "display_name: Ai 婚纱影像 Pro",
+            "9/9",
+            "PHASE_B_WORK_MODE_GATE",
+            "Resolver First",
+            "Reference Binding Truth",
+        ]
+        for marker in required_skill_markers:
+            if marker not in skill:
+                error(f"Xiaoyunque SKILL.md missing v2 marker: {marker}")
+
+    required_reference_markers = {
+        "references/phase-a-identity.md": [
+            "RETOUCH_PROFILE_RESOLVER",
+            "STANDARD_IDENTITY_4_PLUS_1_POLICY",
+            "9/9 APPROVED + FROZEN",
+        ],
+        "references/asset-board-spec.md": [
+            "AB01-M01",
+            "AB03-C01",
+            "WORKING_ARTIFACT",
+        ],
+        "references/phase-b-creative.md": [
+            "PHASE_B_WORK_MODE_GATE",
+            "EXPLICIT_MAKEUP_COMPILATION",
+            "LOOK_IDENTITY_GATE",
+        ],
+        "references/prompt-qc.md": [
+            "REFERENCE_BINDING_TRUTH",
+            "RISK_AWARE_NEGATIVE_COMPILER",
+        ],
+    }
+    for rel, markers in required_reference_markers.items():
+        path = root / rel
+        if path.exists():
+            text = path.read_text(encoding="utf-8", errors="ignore")
+            for marker in markers:
+                if marker not in text:
+                    error(f"Xiaoyunque {rel} missing v2 marker: {marker}")
+
+    banned_v1_phrases = [
+        "六张核心图片资产板",
+        "正面上半身锚 + 六个标准全身方向",
+    ]
+    for path in root.rglob("*.md"):
+        text = path.read_text(encoding="utf-8", errors="ignore")
+        for phrase in banned_v1_phrases:
+            if phrase in text:
+                error(f"Superseded v1 phrase found in Xiaoyunque runtime: {path.relative_to(ROOT)}: {phrase}")
+
     banned_suffixes = {".py", ".pyc", ".sh", ".bat", ".cmd", ".ps1", ".exe"}
     for path in root.rglob("*"):
         if path.is_file() and path.suffix.lower() in banned_suffixes:
             error(f"Executable/script file is not allowed in Xiaoyunque runtime: {path.relative_to(ROOT)}")
 
 
-def validate_doubao() -> None:
+def validate_doubao_history() -> None:
+    """v2 does not treat Doubao as a first-class runtime, but keep historical files healthy."""
     root = ROOT / "platforms/doubao/runtime"
-    required = [
-        "SKILL.md",
-        "manifest/active-canon.yaml",
-        "manifest/build-gates.yaml",
-        "references/INDEX.md",
-        "references/09-doubao-runtime.md",
-        "references/12-script-tool-policy.md",
-        "references/08-video-production.md",
-    ]
-    for rel in required:
-        if not (root / rel).exists():
-            error(f"Doubao runtime missing: {rel}")
-
-    expected_scripts = {
-        "asset_board_layout.py",
-        "asset_registry.py",
-        "batch_planner.py",
-        "media_processor.py",
-        "output_size_calculator.py",
-        "package_validator.py",
-        "project_init.py",
-        "prompt_manifest.py",
-        "qc_report_generator.py",
-        "reference_manifest.py",
-        "runtime_probe.py",
-        "shot_list_export.py",
-        "timeline_validator.py",
-    }
-    actual_scripts = {p.name for p in (root / "scripts").glob("*.py")} if (root / "scripts").exists() else set()
-    missing_scripts = sorted(expected_scripts - actual_scripts)
-    if missing_scripts:
-        error(f"Doubao runtime missing scripts: {missing_scripts}")
+    if not root.exists():
+        return
 
     for path in (root / "scripts").glob("*.py") if (root / "scripts").exists() else []:
         try:
             py_compile.compile(str(path), doraise=True)
         except Exception as exc:
-            error(f"Python syntax failed: {path.relative_to(ROOT)}: {exc}")
-
-    canon_path = root / "manifest/active-canon.yaml"
-    if canon_path.exists():
-        canon = load_yaml(canon_path) or {}
-        for rule in canon.get("rules", []):
-            implementation = rule.get("implementation")
-            if implementation and not (root / implementation).exists():
-                error(f"Doubao active rule target missing: {rule.get('rule_id')} -> {implementation}")
+            error(f"Historical Doubao Python syntax failed: {path.relative_to(ROOT)}: {exc}")
 
 
 def validate_privacy_and_paths() -> None:
@@ -166,7 +226,7 @@ def main() -> int:
     validate_structured_files()
     validate_core()
     validate_xiaoyunque()
-    validate_doubao()
+    validate_doubao_history()
     validate_privacy_and_paths()
 
     if ERRORS:
@@ -176,11 +236,12 @@ def main() -> int:
         return 1
 
     print("Repository validation PASS")
-    print("- Universal Core required rules: PASS")
+    print("- v2 project naming and core rule IDs: PASS")
+    print("- 4+4+1 identity architecture: PASS")
+    print("- retouch/work-mode/look/prompt resolvers: PASS")
     print("- Xiaoyunque no-executable policy: PASS")
-    print("- Doubao runtime/script coverage: PASS")
-    print("- YAML/JSON/Python syntax: PASS")
-    print("- privacy/governance gates: PASS")
+    print("- structured syntax and privacy/governance gates: PASS")
+    print("- historical Doubao Python syntax (if present): PASS")
     return 0
 
 
