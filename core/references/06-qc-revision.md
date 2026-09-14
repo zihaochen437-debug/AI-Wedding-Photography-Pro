@@ -37,7 +37,7 @@
 
 QC 结论必须与实际检查能力匹配。
 
-允许状态：
+允许状态集合：`PASS / FAIL / PARTIAL / NOT_VERIFIED / NOT_APPLICABLE`。
 
 - `PASS`：当前要求域已实际检查且通过；
 - `FAIL`：有明确失败证据；
