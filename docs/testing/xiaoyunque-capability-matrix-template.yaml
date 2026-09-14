@@ -1,0 +1,250 @@
+project: "Ai 婚纱影像 Pro"
+version: "2.0.0-dev"
+platform: "xiaoyunque"
+verified_at:
+account_tier_if_visible: UNKNOWN
+xiaoyunque_version_if_visible: UNKNOWN
+region_if_visible: UNKNOWN
+
+status_vocab:
+  capability: [VERIFIED, OBSERVED, UNKNOWN, UNSUPPORTED, SUPERSEDED]
+  persistence: [PERSISTED, SESSION_ONLY, UNKNOWN]
+
+runtime:
+  free_canvas:
+    ui_available: UNKNOWN
+    user_interactive: UNKNOWN
+    agent_direct_callable: UNKNOWN
+    evidence:
+  image_generation:
+    tool_name: sandbox_generate_image
+    tool_available: UNKNOWN
+    agent_direct_callable: UNKNOWN
+    evidence:
+  video_generation:
+    tool_names: [sandbox_generate_video, render_video]
+    tool_available: UNKNOWN
+    agent_direct_callable: UNKNOWN
+    evidence:
+  video_processing:
+    tool_name: sandbox_process_video
+    tool_available: UNKNOWN
+    agent_direct_callable: UNKNOWN
+    evidence:
+  image_edit:
+    ui_available: UNKNOWN
+    user_interactive: UNKNOWN
+    agent_direct_callable: UNKNOWN
+    evidence:
+  upscale:
+    ui_available: UNKNOWN
+    user_interactive: UNKNOWN
+    agent_direct_callable: UNKNOWN
+    evidence:
+  outpaint:
+    ui_available: UNKNOWN
+    user_interactive: UNKNOWN
+    agent_direct_callable: UNKNOWN
+    evidence:
+  local_inpaint:
+    ui_available: UNKNOWN
+    user_interactive: UNKNOWN
+    agent_direct_callable: UNKNOWN
+    evidence:
+  lighting_adjustment:
+    ui_available: UNKNOWN
+    user_interactive: UNKNOWN
+    agent_direct_callable: UNKNOWN
+    evidence:
+  camera_view_adjustment:
+    ui_available: UNKNOWN
+    user_interactive: UNKNOWN
+    agent_direct_callable: UNKNOWN
+    evidence:
+  layer_separation:
+    ui_available: UNKNOWN
+    user_interactive: UNKNOWN
+    agent_direct_callable: UNKNOWN
+    evidence:
+  makeup_expression_tools:
+    ui_available: UNKNOWN
+    user_interactive: UNKNOWN
+    agent_direct_callable: UNKNOWN
+    evidence:
+  video_edit:
+    ui_available: UNKNOWN
+    user_interactive: UNKNOWN
+    agent_direct_callable: UNKNOWN
+    evidence:
+  video_extend:
+    ui_available: UNKNOWN
+    user_interactive: UNKNOWN
+    agent_direct_callable: UNKNOWN
+    evidence:
+  director_3d_stage:
+    ui_available: UNKNOWN
+    user_interactive: UNKNOWN
+    agent_direct_callable: UNKNOWN
+    evidence:
+  multitrack_editor:
+    ui_available: UNKNOWN
+    user_interactive: UNKNOWN
+    agent_direct_callable: UNKNOWN
+    evidence:
+  audio_tools:
+    ui_available: UNKNOWN
+    user_interactive: UNKNOWN
+    agent_direct_callable: UNKNOWN
+    evidence:
+
+models:
+  reasoning:
+    visible_model: UNKNOWN
+    selectable: UNKNOWN
+    actual_model_if_known: UNKNOWN
+    selection_source: PLATFORM_DEFAULT
+    evidence:
+
+  image:
+    - name: "Seedream 5.0 Pro"
+      model_available: UNKNOWN
+      ui_available: UNKNOWN
+      user_interactive: UNKNOWN
+      agent_direct_callable: UNKNOWN
+      generation_verified: UNKNOWN
+      edit_verified: UNKNOWN
+      notes:
+    - name: "Seedream 5.0 Lite"
+      model_available: UNKNOWN
+      ui_available: UNKNOWN
+      user_interactive: UNKNOWN
+      agent_direct_callable: UNKNOWN
+      generation_verified: UNKNOWN
+      edit_verified: UNKNOWN
+      notes:
+    - name: "Seedream 4.5"
+      model_available: UNKNOWN
+      ui_available: UNKNOWN
+      user_interactive: UNKNOWN
+      agent_direct_callable: UNKNOWN
+      generation_verified: UNKNOWN
+      edit_verified: UNKNOWN
+      notes:
+    - name: "Seedream 4.0"
+      model_available: UNKNOWN
+      ui_available: UNKNOWN
+      user_interactive: UNKNOWN
+      agent_direct_callable: UNKNOWN
+      generation_verified: UNKNOWN
+      edit_verified: UNKNOWN
+      notes:
+    - name: "SeedEdit 3.0"
+      model_available: UNKNOWN
+      ui_available: UNKNOWN
+      user_interactive: UNKNOWN
+      agent_direct_callable: UNKNOWN
+      generation_verified: NOT_APPLICABLE
+      edit_verified: UNKNOWN
+      notes:
+    - name: "Anycook 影视版"
+      model_available: UNKNOWN
+      ui_available: UNKNOWN
+      user_interactive: UNKNOWN
+      agent_direct_callable: UNKNOWN
+      generation_verified: UNKNOWN
+      edit_verified: UNKNOWN
+      notes:
+    - name: "Anycook 标准版"
+      model_available: UNKNOWN
+      ui_available: UNKNOWN
+      user_interactive: UNKNOWN
+      agent_direct_callable: UNKNOWN
+      generation_verified: UNKNOWN
+      edit_verified: UNKNOWN
+      notes:
+    - name: "Anycook 创意版"
+      model_available: UNKNOWN
+      ui_available: UNKNOWN
+      user_interactive: UNKNOWN
+      agent_direct_callable: UNKNOWN
+      generation_verified: UNKNOWN
+      edit_verified: UNKNOWN
+      notes:
+    - name: "旗舰生图 V2-Pro"
+      model_available: UNKNOWN
+      ui_available: UNKNOWN
+      user_interactive: UNKNOWN
+      agent_direct_callable: UNKNOWN
+      generation_verified: UNKNOWN
+      edit_verified: UNKNOWN
+      notes:
+
+  video:
+    - name: "Seedance 2.5"
+      model_available: UNKNOWN
+      ui_available: UNKNOWN
+      user_interactive: UNKNOWN
+      agent_direct_callable: UNKNOWN
+      generation_verified: UNKNOWN
+      edit_verified: UNKNOWN
+      extend_verified: UNKNOWN
+      audio_verified: UNKNOWN
+      max_duration_option_if_visible: UNKNOWN
+      output_options_if_visible: UNKNOWN
+      notes:
+    - name: "Seedance 2.0"
+      model_available: UNKNOWN
+      ui_available: UNKNOWN
+      user_interactive: UNKNOWN
+      agent_direct_callable: UNKNOWN
+      generation_verified: UNKNOWN
+      edit_verified: UNKNOWN
+      extend_verified: UNKNOWN
+      audio_verified: UNKNOWN
+      max_duration_option_if_visible: UNKNOWN
+      output_options_if_visible: UNKNOWN
+      notes:
+    - name: "Seedance 2.0 Mini"
+      model_available: UNKNOWN
+      ui_available: UNKNOWN
+      user_interactive: UNKNOWN
+      agent_direct_callable: UNKNOWN
+      generation_verified: UNKNOWN
+      notes:
+    - name: "Seedance 2.0 Fast"
+      model_available: UNKNOWN
+      ui_available: UNKNOWN
+      user_interactive: UNKNOWN
+      agent_direct_callable: UNKNOWN
+      generation_verified: UNKNOWN
+      notes:
+
+  specialty:
+    jimeng_video_3_pro: UNKNOWN
+    jimeng_video_3_1080_720: UNKNOWN
+    motion_imitation_2: UNKNOWN
+    omni_human_1_5: UNKNOWN
+    omni_human_1_0_fast: UNKNOWN
+    video_translation_2: UNKNOWN
+    subtitle_removal: UNKNOWN
+
+  audio:
+    seed_audio_1_0: UNKNOWN
+    seed_music: UNKNOWN
+    seed_realtime: UNKNOWN
+    seeduplex: UNKNOWN
+    seed_liveinterpret_2_0: UNKNOWN
+    seed_realtime_voice: UNKNOWN
+
+  three_d:
+    seed3d_2_0: UNKNOWN
+    seed3d_1_0: UNKNOWN
+    xiaoyunque_3d_director_stage: UNKNOWN
+
+persistence:
+  status: UNKNOWN
+  project_snapshot_recovered: UNKNOWN
+  cross_session_tested: false
+  evidence:
+
+notes:
