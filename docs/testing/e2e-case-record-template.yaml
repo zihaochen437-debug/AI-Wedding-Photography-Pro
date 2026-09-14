@@ -1,0 +1,78 @@
+project: "Ai 婚纱影像 Pro"
+version: "2.0.0-dev"
+case_id:
+case_type: "IDENTITY | LOOK | PHOTO | VF01 | VF02 | VF03 | PERSISTENCE | NEGATIVE"
+date:
+platform: "xiaoyunque"
+
+privacy:
+  public_safe_assets_only: true
+  real_client_private_assets_committed: false
+
+runtime_snapshot:
+  capability_matrix_version:
+  persistence_status: UNKNOWN
+
+inputs:
+  synthetic_or_licensed_subjects:
+  reference_roles:
+  approved_upstream_assets:
+  user_decisions:
+
+model_plan:
+  reasoning:
+  image_identity:
+  image_creative:
+  image_edit:
+  image_scene:
+  video_shot:
+  video_sequence:
+  video_edit:
+  audio_post:
+  previs_3d:
+
+execution:
+  prompts:
+  tools_called:
+  shot_or_asset_ids:
+  takes:
+  revisions:
+
+expected_behavior:
+
+actual_behavior:
+
+qc:
+  review_method:
+  evidence_scope:
+  domains:
+  hard_failures:
+  status: "PASS | FAIL | PARTIAL | NOT_VERIFIED"
+
+approval:
+  user_gate:
+  status:
+
+metrics:
+  attempt_count:
+  elapsed_steps:
+  cost_if_known:
+
+failures:
+  - type:
+    asset_or_time_range:
+    evidence:
+    suspected_cause:
+    changed_variable_on_retry:
+
+result:
+  final_status:
+  selected_asset_or_take:
+  approved_baseline:
+
+conclusion:
+
+canon_change_required: false
+canon_change_notes:
+
+follow_up:
