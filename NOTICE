@@ -1,6 +1,24 @@
-AI Wedding Photography Pro
+Ai 婚纱影像 Pro
 Copyright 2026 Hugo Chen / 陈自豪
 
-This product includes software, documentation, workflow specifications, prompt specifications, and platform adapter materials developed as part of the AI Wedding Photography Pro project.
+Starting with v2.0.0, the official project name is "Ai 婚纱影像 Pro". "Ai 婚纱摄影 Pro" and "AI Wedding Photography Pro" remain historical/technical v1.x or repository identifiers where necessary for compatibility and traceability.
 
-Licensed under the Apache License, Version 2.0.
+The original source code, project documentation, workflow specifications, production schemas, prompt/compiler specifications, Canon rules, tests, and platform-adapter materials authored for this repository are licensed under the Apache License, Version 2.0, unless a file explicitly states otherwise.
+
+Professional research acknowledgements
+--------------------------------------
+
+This project has been informed by professional filmmaking, AI-video, prompt-engineering, production-management, and open-source references. These sources are research inputs and do not automatically become runtime dependencies or inherit the Apache-2.0 license of this repository.
+
+Notable research references include:
+
+- Serge Shima / smixs "visual-skills" — CC BY 4.0. Research use includes dramaturgy, directing/editorial role separation, AI-video prompt discipline, and model-reference workflow ideas. Attribution: Serge Shima, https://github.com/smixs/visual-skills
+- `seedance-2-5-video-director` research source — MIT-licensed repository as verified during project research.
+- `seedance-2.0` Skill OS research source — MIT-licensed repository as verified during project research.
+- `manju-laoli-skill/short-drama-director` — MIT-licensed research source as verified during project research.
+- `XiaoLuo-AI-Drama-Skill` — used only for high-level principle study where the repository root did not expose a license during the current audit; no license is inferred.
+- OpenTimelineIO, OpenColorIO/ACES, Kitsu, OpenRV and related public filmmaking/VFX infrastructure — referenced for production-data, color-management, review and workflow concepts under their respective upstream terms.
+
+User-provided Skill and prompt-reference files whose redistribution license is not explicitly known are treated as research-only sources: principles may be abstracted into original project rules, but their long-form text, templates, distinctive examples, or proprietary expressions are not redistributed as Apache-2.0 project content without separate permission.
+
+See `docs/research/professional-skill-source-matrix.md` for the current source/evidence/license adoption matrix.
