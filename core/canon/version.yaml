@@ -1,6 +1,8 @@
-version: "1.9.0"
+version: "2.0.0-dev"
 scope: universal-core
+project_name: "Ai 婚纱影像 Pro"
 current_first_class_adapters:
   - xiaoyunque
+historical_adapters:
   - doubao
 license: Apache-2.0
