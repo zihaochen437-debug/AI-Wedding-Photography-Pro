@@ -1,24 +1,31 @@
-# Runtime 路由索引
+# Ai 婚纱影像 Pro v2｜小云雀 Runtime 路由索引
 
 本 Runtime 采用“小云雀原生 Compact Skill”思路：薄 `SKILL.md` + 少量高密度 references + 渐进式加载。可以压缩物理文件数量，但不能压缩业务能力。
 
 | 当前任务 | 必读文档 |
 |---|---|
-| 启动、参考上传、人物资料、S/A/B/C/D、R0–R4、AB01–AB03 | `phase-a-identity.md` |
-| AB01–AB06 结构、方向、中性光、状态、依赖 | `asset-board-spec.md` |
-| 输出类型、照片数量、Suite/Style/Look/Scene、商业能力目录 | `phase-b-creative.md` |
-| Pose/Blocking、Camera Geometry、器材视觉语言、商业组片 | `director-camera.md` |
-| @参考职责、Asset Authority + Delta、QC、Scoped Revision、重生成 | `prompt-qc.md` |
+| 启动、参考上传、人物资料、S/A/B/C/D、R0–R4、Retouch Resolver、标准服装、9图人物标准资产 | `phase-a-identity.md` |
+| AB01–AB06 逻辑职责、M/U/F/D、AB03-C01、方向、中性光、状态、依赖 | `asset-board-spec.md` |
+| Phase B 工作模式、输出类型/数量、Suite/Style、Look Resolver、显式妆容、Scene | `phase-b-creative.md` |
+| Pose/Blocking、Camera Geometry、器材视觉语言、Lighting、商业组片 | `director-camera.md` |
+| Resolver、@参考职责、Reference Binding Truth、Asset Authority + Delta、QC、Scoped Revision、重生成 | `prompt-qc.md` |
 | 正式照片、Approved Shot、Batch、Crop/Outpaint/Upscale、交付 | `photo-production.md` |
-| 视频、VB01、时间轴、运镜、Photo-to-Video、音频和视频 QC | `video-production.md` |
+| 婚纱影视、VB01、时间轴、运镜、Photo-to-Video、音频和视频 QC | `video-production.md` |
 | 小云雀 Frontmatter/tools、模型路由、自由画布、能力真实性、持久化 | `xiaoyunque-runtime.md` |
 
 ## 全局不可跳过
 
+- v2 用户可见正式名称：`Ai 婚纱影像 Pro`。
 - 身份优先、用户自主、男女对等、自然真实写实。
+- Phase A 结束条件是人物标准资产 `9/9 APPROVED + FROZEN`。
+- AB01/AB02 是四槽人物资产包；AB03 仅为一张双人正面全身比例母版。
+- U/F/D 板内区域不是独立正式人物资产；临时中间图只能是 Working Artifact。
+- R0–R4、Look、妆容、导演模式等 UI 名称必须先 Resolver 展开。
+- Phase B 必须先通过 `PHASE_B_WORK_MODE_GATE`，工作模式不自动取得故事或分镜自主权。
+- 除用户明确无妆外，新娘 AB04 首版必须执行已确认妆容并通过身份门。
 - 只有 `APPROVED + FROZEN` 可以成为正式下游权威。
 - `REJECTED / QUARANTINE` 不得继续引用。
-- 已冻结资产通过 `@` 继承，不重复文字复述。
+- 已冻结资产只有在真实绑定给模型时才可用内部 @ID 直接承担执行语义；否则展开当前任务需要的已批准信息。
 - 未锁定/新增/变化内容才进行详细自然语言描述。
-- Runtime 中禁止脚本和可执行文件。
+- 小云雀 Runtime 中禁止脚本和可执行文件。
 - UI 存在某能力不代表 Agent 可直接调用。
