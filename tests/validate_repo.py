@@ -146,9 +146,30 @@ def validate_core() -> None:
         "core highest rules",
     )
     require_markers(
+        core_root / "references/03-phase-b-creative.md",
+        [
+            "PRODUCT_BRANCH_DEPENDENCY_ROUTER",
+            "VF01",
+            "纯 VF02 **不强制先做 AB04/AB05/AB06**",
+            "WEDDING_LINE_SOURCE",
+        ],
+        "core product branch router",
+    )
+    require_markers(
         core_root / "references/04-director-camera.md",
         ["DIRECTOR_SYSTEM_4_LAYER", "PERFORMANCE_DIRECTION_SYSTEM", "DIR01", "BLOCKING_BEFORE_FRAMING", "MOTION_PHYSICS_ENGINE"],
         "core director system",
+    )
+    require_markers(
+        core_root / "references/06-qc-revision.md",
+        [
+            "QC_EVIDENCE_SCOPE",
+            "PASS / FAIL / PARTIAL / NOT_VERIFIED / NOT_APPLICABLE",
+            "RETRY_BUDGET_POLICY",
+            "MANUAL_TAKEOVER_GATE",
+            "UPSCALE_DIFF_GATE",
+        ],
+        "core QC evidence and retry policy",
     )
     require_markers(
         core_root / "references/08-video-production.md",
@@ -160,6 +181,15 @@ def validate_core() -> None:
         ["Seed2.1 Pro", "Seedream 5.0 Pro", "Anycook 影视版", "旗舰生图 V2-Pro", "Seedance 2.5", "Seed Audio 1.0", "Seed3D 2.0"],
         "core model catalog",
     )
+
+    testing_files = [
+        ROOT / "docs/testing/v2-xiaoyunque-runtime-validation-plan.md",
+        ROOT / "docs/testing/xiaoyunque-capability-matrix-template.yaml",
+        ROOT / "docs/testing/e2e-case-record-template.yaml",
+    ]
+    for path in testing_files:
+        if not path.exists():
+            error(f"Missing v2 runtime/E2E testing artifact: {path.relative_to(ROOT)}")
 
     platform_only_phrases = [
         "豆包为当前唯一发行目标",
@@ -234,6 +264,8 @@ def validate_xiaoyunque() -> None:
         ],
         "references/phase-b-creative.md": [
             "PHASE_B_WORK_MODE_GATE",
+            "PRODUCT_BRANCH_DEPENDENCY_ROUTER",
+            "纯 VF02 **不强制先做 AB04/AB05/AB06**",
             "EXPLICIT_MAKEUP_COMPILATION",
             "LOOK_IDENTITY_GATE",
         ],
@@ -246,6 +278,9 @@ def validate_xiaoyunque() -> None:
         "references/prompt-qc.md": [
             "REFERENCE_BINDING_TRUTH",
             "RISK_AWARE_NEGATIVE_COMPILER",
+            "QC_EVIDENCE_SCOPE",
+            "RETRY_BUDGET_POLICY",
+            "MANUAL_TAKEOVER_GATE",
         ],
         "references/video-production.md": [
             "VF01",
@@ -328,9 +363,11 @@ def main() -> int:
     print("Repository validation PASS")
     print("- v2 project naming and active canon targets: PASS")
     print("- 4+4+1 identity architecture and resolvers: PASS")
+    print("- product-specific Photo/VF01/VF02/VF03 asset dependencies: PASS")
     print("- four-layer director / DIR01 / physical direction: PASS")
     print("- VF01/VF02/VF03 film production and approval/audio gates: PASS")
-    print("- complete model catalog and governance files: PASS")
+    print("- QC evidence scope / retry / manual takeover semantics: PASS")
+    print("- complete model catalog and runtime/E2E test artifacts: PASS")
     print("- Xiaoyunque no-executable policy: PASS")
     print("- structured syntax and privacy/governance gates: PASS")
     print("- historical Doubao Python syntax (if present): PASS")
