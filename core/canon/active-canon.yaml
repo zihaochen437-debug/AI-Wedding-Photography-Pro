@@ -206,6 +206,30 @@ rules:
   status: ACTIVE
   title: Look 局部问题优先受控编辑当前正确版本
   implementation: references/03-phase-b-creative.md
+- rule_id: DIRECTOR_SYSTEM_4_LAYER
+  status: ACTIVE
+  title: 故事导演、表演导演、物理摄影导演与模型编译器四层分离
+  implementation: references/04-director-camera.md
+- rule_id: PERFORMANCE_DIRECTION_SYSTEM
+  status: ACTIVE
+  title: 表演以可观察行为和关系变化为核心，叙事场景按需使用 Objective/Beat/Subtext
+  implementation: references/04-director-camera.md
+- rule_id: EYE_LIFE_REQUIRED
+  status: ACTIVE
+  title: 人物眼神具有真实注意力与反应，不机械冻结或过度表演
+  implementation: references/04-director-camera.md
+- rule_id: BLOCKING_BEFORE_FRAMING
+  status: ACTIVE
+  title: 先人物调度和空间关系，后机位与构图
+  implementation: references/04-director-camera.md
+- rule_id: DIR01_PHOTO_DIRECTOR_PLAN
+  status: ACTIVE
+  title: 照片批量生产前建立可冻结摄影导演方案和 Shot Coverage
+  implementation: references/04-director-camera.md
+- rule_id: SHOT_DIVERSITY_GATE
+  status: ACTIVE
+  title: 商业套系保持景别构图动作视线与机位多样性，阈值为可解释软规则
+  implementation: references/04-director-camera.md
 - rule_id: CAMERA_GEOMETRY_LOCK
   status: ACTIVE
   title: 景别、距离、方位、高度、俯仰、横滚等分离
@@ -213,6 +237,26 @@ rules:
 - rule_id: CAMERA_TO_RENDERING_COMPILER
   status: ACTIVE
   title: 器材参数翻译为可见摄影语言，不伪造 EXIF
+  implementation: references/04-director-camera.md
+- rule_id: OPTICAL_OUTCOME_FIRST
+  status: ACTIVE
+  title: 模型 Prompt 优先描述可见透视景深压缩与焦平面结果
+  implementation: references/04-director-camera.md
+- rule_id: NO_RANDOM_CAMERA_MOVEMENT
+  status: ACTIVE
+  title: Camera Movement 必须有叙事情绪或空间动机
+  implementation: references/04-director-camera.md
+- rule_id: MOTION_PHYSICS_ENGINE
+  status: ACTIVE
+  title: 人体服装头纱道具宠物运动遵守质量惯性重力接触与延迟
+  implementation: references/04-director-camera.md
+- rule_id: LIGHTING_PRIORITY_LOCK
+  status: ACTIVE
+  title: 灯光为可冻结生产约束，不是空洞风格装饰
+  implementation: references/04-director-camera.md
+- rule_id: MOTIVATED_FILMMAKING
+  status: ACTIVE
+  title: 动作运镜转场道具声音都需有当前使用理由
   implementation: references/04-director-camera.md
 - rule_id: SCENE_LOOK_SEQUENCE_SHOT
   status: ACTIVE
@@ -222,10 +266,38 @@ rules:
   status: ACTIVE
   title: 商业 Shot 角色完整保留
   implementation: references/04-director-camera.md
+- rule_id: PRODUCTION_CONTROL_ASSETS
+  status: ACTIVE
+  title: Blocking/Storyboard/Camera/Lighting/Motion/Audio/DIR01 可冻结资产化
+  implementation: references/04-director-camera.md
+- rule_id: MODEL_ROLE_SEPARATION
+  status: ACTIVE
+  title: 推理/生图/编辑/视频/音频/3D工具职责分离
+  implementation: references/model-routing.md
+- rule_id: MODEL_CATALOG_IS_COMPLETE_BUT_RUNTIME_DYNAMIC
+  status: ACTIVE
+  title: 保留完整候选模型目录，实际生产只用当前 Runtime 真实可用能力
+  implementation: references/model-catalog.md
+- rule_id: MODEL_SPEC_IS_VERSIONED_EVIDENCE
+  status: ACTIVE
+  title: 分辨率参考上限价格并发等模型规格必须带版本和核验来源
+  implementation: references/model-catalog.md
+- rule_id: MODEL_PLAN_REQUIRED
+  status: ACTIVE
+  title: 项目维护阶段级模型计划、参考、Prompt版本、fallback与切换原因
+  implementation: references/model-routing.md
+- rule_id: MODEL_RUNTIME_PREFLIGHT
+  status: ACTIVE
+  title: 关键生图视频编辑音频节点前重新扫描当前平台真实能力
+  implementation: references/model-catalog.md
+- rule_id: CONTROLLED_MODEL_AB_TEST
+  status: ACTIVE
+  title: 模型成为商业默认路由前需受控任务测试，不凭版本号或宣传判断
+  implementation: references/model-test-protocol.md
 - rule_id: DYNAMIC_MODEL_ORCHESTRATION
   status: ACTIVE
   title: 按任务能力动态路由推理/图片/视频模型
-  implementation: references/runtime-capability-contract.md
+  implementation: references/model-routing.md
 - rule_id: RUNTIME_CAPABILITY_TRUTH_POLICY
   status: ACTIVE
   title: UI/Agent/Script 可调用状态不得互相推导
@@ -258,10 +330,6 @@ rules:
   status: ACTIVE
   title: 正向状态优先，仅针对当前真实风险加入局部禁止项
   implementation: references/05-prompt-compiler.md
-- rule_id: PRODUCTION_CONTROL_ASSETS
-  status: ACTIVE
-  title: Blocking/Storyboard/Camera/Lighting/Motion/Audio 可冻结资产化
-  implementation: references/04-director-camera.md
 - rule_id: AI_NATIVE_FINAL_SHOT
   status: ACTIVE
   title: 正式 Shot 第一次生成即按商业成片质量
@@ -292,23 +360,67 @@ rules:
   implementation: references/06-qc-revision.md
 - rule_id: VIDEO_CORE_PRODUCT
   status: ACTIVE
-  title: 视频为正式核心产品
+  title: 婚纱影视为正式核心产品
+  implementation: references/08-video-production.md
+- rule_id: WEDDING_FILM_PRODUCT_CLASS
+  status: ACTIVE
+  title: 婚纱影视分 VF01 动态、VF02 创意叙事、VF03 混合叙事三类
+  implementation: references/08-video-production.md
+- rule_id: WEDDING_FILM_DURATION_POLICY
+  status: ACTIVE
+  title: 最终婚纱影视母版时长不超过五分钟，单次生成时长不等于成片时长
+  implementation: references/08-video-production.md
+- rule_id: PROFESSIONAL_FILM_PRODUCTION_SYSTEM
+  status: ACTIVE
+  title: 婚纱影视执行策划编剧导演摄影表演美术场记剪辑声音调色QC专业职责链
   implementation: references/08-video-production.md
 - rule_id: VIDEO_PROJECT_GATE
   status: ACTIVE
-  title: 视频项目前置确认类型/时长/比例/用途/故事基础
+  title: 视频项目前置确认 VF类型/时长/比例/用途/故事基础/声音需求
+  implementation: references/08-video-production.md
+- rule_id: VIDEO_CREATIVE_APPROVAL_POLICY
+  status: ACTIVE
+  title: 故事情节与正式分镜为两个独立审批门
+  implementation: references/08-video-production.md
+- rule_id: STORY_APPROVAL_GATE
+  status: ACTIVE
+  title: VF02/VF03 故事默认需用户确认，除非显式 Story Autonomy
+  implementation: references/08-video-production.md
+- rule_id: STORYBOARD_APPROVAL_GATE
+  status: ACTIVE
+  title: VB01 默认需用户确认，除非显式 Storyboard Autonomy
+  implementation: references/08-video-production.md
+- rule_id: SCRIPT_BREAKDOWN_ENGINE
+  status: ACTIVE
+  title: Approved Script 拆解角色Look服装道具Scene声音等动态生产资产
   implementation: references/08-video-production.md
 - rule_id: VB01
   status: ACTIVE
-  title: VB01 视频分镜与时间轴资产板
+  title: VB01 为婚纱影视 Storyboard + Timeline Master
   implementation: references/08-video-production.md
-- rule_id: VIDEO_CONTIGUOUS_TIMELINE
+- rule_id: TIMELINE_PRECISION_POLICY
   status: ACTIVE
-  title: 视频时间轴连续不重叠
+  title: 创作分镜ShotCard声音EDL以0.1秒记录，模型时间粒度按真实能力适配
+  implementation: references/08-video-production.md
+- rule_id: FRAME_SNAP_POLICY
+  status: ACTIVE
+  title: 最终视觉剪辑点吸附实际完整帧边界
+  implementation: references/08-video-production.md
+- rule_id: FIRST_FRAME_CONTRACT
+  status: ACTIVE
+  title: 视频 Shot 第一帧人物空间Camera与光线状态显式定义
+  implementation: references/08-video-production.md
+- rule_id: SHOT_END_STATE_IS_NEXT_SHOT_INPUT
+  status: ACTIVE
+  title: 已批准 Shot 结束状态作为下一镜连续性输入
+  implementation: references/08-video-production.md
+- rule_id: FILM_CONTINUITY_GATE
+  status: ACTIVE
+  title: 视频检查轴线视线动作方向空间时间道具Look灯光表演与声音连续性
   implementation: references/08-video-production.md
 - rule_id: VIDEO_PHYSICS_REALISM
   status: ACTIVE
-  title: 视频人体、布料、头纱、风、重力与相机运动真实
+  title: 视频人体布料头纱风重力接触与相机运动真实
   implementation: references/08-video-production.md
 - rule_id: VIDEO_REFERENCE_ROLES
   status: ACTIVE
@@ -316,23 +428,55 @@ rules:
   implementation: references/08-video-production.md
 - rule_id: PHOTO_TO_VIDEO_ANCHOR
   status: ACTIVE
-  title: 批准婚纱照是图生视频视觉锚点
+  title: VF01 中批准婚纱照是动态延展视觉锚点
   implementation: references/08-video-production.md
-- rule_id: VIDEO_QC
+- rule_id: LIMITED_TAKE_POLICY
   status: ACTIVE
-  title: 视频身份/Look/Scene/物理/音画连续性质检
+  title: 先导演再有限目的性 Take，不无上限抽卡
   implementation: references/08-video-production.md
 - rule_id: VIDEO_SEGMENT_SCOPED_REVISION
   status: ACTIVE
-  title: 视频局部片段受控修订
+  title: 视频局部片段按时间和目标域受控修订
   implementation: references/08-video-production.md
 - rule_id: APPROVED_VIDEO_BASELINE
   status: ACTIVE
-  title: 批准视频版本为最终基线
+  title: 批准视频版本为最终视觉基线
+  implementation: references/08-video-production.md
+- rule_id: NO_BGM_BEFORE_PICTURE_LOCK
+  status: ACTIVE
+  title: Picture Lock 前禁止非剧情背景音乐进入正式 Shot 和剪辑
+  implementation: references/08-video-production.md
+- rule_id: SYNC_SOUND_ONLY
+  status: ACTIVE
+  title: Shot Production 只允许现场对白呼吸环境Foley剧情内声音与有意静默
+  implementation: references/08-video-production.md
+- rule_id: VOICEOVER_POST_ONLY
+  status: ACTIVE
+  title: 默认旁白只规划不混入 Shot Generation，在后期声音阶段加入
+  implementation: references/08-video-production.md
+- rule_id: PICTURE_LOCK_BEFORE_MUSIC
+  status: ACTIVE
+  title: 背景音乐只在画面锁定后进入 Music Spotting/Edit/Mix
+  implementation: references/08-video-production.md
+- rule_id: EDITING_SYSTEM
+  status: ACTIVE
+  title: Take选择Assembly粗剪精剪PictureLock声音调色QC母版为正式后期链
+  implementation: references/08-video-production.md
+- rule_id: FILM_QC_GATE
+  status: ACTIVE
+  title: 婚纱影视检查身份人体Look道具Scene物理Camera连续性音画与AI伪影
+  implementation: references/08-video-production.md
+- rule_id: PLATFORM_DERIVATIVE_IS_NOT_DUMB_CROP
+  status: ACTIVE
+  title: 横竖及平台派生版本必须重新构图并QC，不盲裁母版
+  implementation: references/08-video-production.md
+- rule_id: VIDEO_QC
+  status: ACTIVE
+  title: 视频身份LookScene物理音画连续性质检
   implementation: references/08-video-production.md
 - rule_id: AUDIO_BOUNDARY
   status: ACTIVE
-  title: 音频控制节奏情绪语音，不控制视觉身份
+  title: 音频不控制视觉身份，声音模型调用以运行时真实性为准
   implementation: references/08-video-production.md
 - rule_id: PROJECT_STATE_SNAPSHOT
   status: ACTIVE
@@ -348,11 +492,11 @@ rules:
   implementation: references/03-phase-b-creative.md
 - rule_id: HARD_FAILURE_GATE
   status: ACTIVE
-  title: 身份/人体/服装/Scene/妆造缺失/修订越界等硬失败进入拒绝隔离
+  title: 身份人体服装Scene妆造缺失修订越界等硬失败进入拒绝隔离
   implementation: references/06-qc-revision.md
 - rule_id: SUPERSEDED_PIPELINE_PURGE
   status: ACTIVE
-  title: 清除固定8000x12000、旧底片精修、旧多方向正式资产、批准后重生Final等旧链路
+  title: 清除固定像素旧底片精修旧多方向正式资产批准后重生Final等旧链路
   implementation: canon/deprecated-and-superseded.yaml
 - rule_id: PERSISTENCE_TRUTH
   status: ACTIVE
